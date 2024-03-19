@@ -32,8 +32,8 @@ Projekt został stworzony przez Cezarego Panasa.
 Pełny opis problemu oraz metodologia analizy znajdują się w raporcie `raport.pdf`.
 
 Szczegółowe fragmenty analizy w kodzie można znaleźć w następujących miejscach:
-- Funkcja obliczająca potencjalne stany świata (prawdopodobieństwo że skończymy w konkretnym węźle końcowym po wybraniu konkretnej strategii oraz koszty które poniesie firma) znajduje się w pliku `graph.py` w linijkach [60-83](https://github.com/czareek/Decision-Tree/edit/main/README.md).
-- Funkcja symulująca analizę znajduje się w pliku `graph.py` w linijkach [86-144](https://github.com/username/repository/blob/branch/main.py#L86-L144).
+- Funkcja obliczająca potencjalne stany świata (prawdopodobieństwo że skończymy w konkretnym węźle końcowym po wybraniu konkretnej strategii oraz koszty które poniesie firma) znajduje się w pliku `graph.py` w linijkach [60-83]([https://github.com/czareek/Decision-Tree/edit/main/README.md](https://github.com/czareek/Decision-Tree/blob/main/graph.py)).
+- Funkcja symulująca analizę znajduje się w pliku `graph.py` w linijkach [86-144]([https://github.com/username/repository/blob/branch/main.py#L86-L144](https://github.com/czareek/Decision-Tree/blob/main/graph.py)).
 - Analiza wrażliwości na zmianę odchylenia standardowego znajduje się w pliku `main.py` w linijkach [146-180](https://github.com/username/repository/blob/branch/main.py#L146-L180).
 - Analiza kosztów przy wzroście kosztu decyzji "Check" znajduje się w pliku `main.py` w linijkach [182-222](https://github.com/username/repository/blob/branch/main.py#L182-L222).
 - Analiza wpływu zmiany kary za błędy na opłacalność strategii znajduje się w pliku `main.py` w linijkach [224-269](https://github.com/username/repository/blob/branch/main.py#L224-L269).
