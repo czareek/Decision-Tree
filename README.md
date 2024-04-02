@@ -93,7 +93,7 @@ Projekt został stworzony przez Cezarego Panasa.
 - wykorzystuje funkcję "run_simulation_analysis" z pliku `graph.py` która jako argumenty przyjmuje opisane w treści zadania parametry oraz generuje histogramy wraz z oszacowaniami jądrowymi gęstości, a także dystrybuanty rozkładu prawdopodobieństwa każdej ze strategii.  
 
 `sensitivity_analisis.py`
--  analiza wrażlwości wraz z wizualiacją 
+-  analiza wrażliwości wraz z wizualizacją 
   
 
 
