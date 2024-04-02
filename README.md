@@ -12,13 +12,26 @@ Firma XYZ stoi przed trudnym wyborem, mając do rozważenia trzy scenariusze w z
 
 Kod został napisany w języku Python i wykorzystuje biblioteki takie jak NetworkX, NumPy i Matplotlib do symulacji i wizualizacji danych. Problem decyzyjny został sprowadzony do grafu skierowanego. Następnie wyniki symulacji poddano analizie wrażliwości, która pozwalaja na głębszą eksplorację scenariuszy decyzyjnych i zrozumienia problemu.
 
+## Wyniki 
+
+
+Rekomendacja: Strategia "Check" jest optymalna, uwzględniając koszty, ryzyko i stabilność wyników. Strategia "fix" ma niższe odchylenie standardowe kosztów, ale "Check" nadal przewyższa ją pod względem opłacalności. Strategia "ignore" jest silnie zdominowana przez dwie pozostałe strategie. Analiza wrażliwości, obejmująca zwiększenie odchylenia standardowego prawdopodobieństwa oraz wzrost kosztów decyzji "Check", dostarcza cennych informacji dla procesu decyzyjnego. Na podstawie uzyskanych wyników  rekomendowana  strategia to  "Check".
+
 ## Analiza Wrażliwości
 
-Projekt przeprowadza analizę wrażliwości na zmianę odchylenia standardowego prawdopodobieństwa wystąpienia poważnych błędów w kodzie oraz na wzrost kosztów przeprowadzenia badania kodu "Check". Ponadto, analizuje on wpływ zmiany kary za błędy na opłacalność poszczególnych strategii.
+Analiza wrażliwości, obejmująca zwiększenie odchylenia standardowego prawdopodobieństwa oraz wzrost kosztów decyzji "Check", dostarcza cennych informacji dla procesu decyzyjnego.
+Projekt analizuje wpływ zmiany wysokości kary, kosztów przeprowadzenia badania na opłacalność poszczególnych strategii:
 
-## Wyniki Analizy
+W wyniku zwiększenienia odchylenia standardowego prawdopodobieństwa "p" strategia "Check" nadal jest najbardziej opłacalna, chociaż jej przewaga zmniejszyła się. Strategia "Ignore" zyskała na konkurencyjności.
 
-Po przeprowadzeniu symulacji stwierdzono, że strategia "Check" wygrywa najczęściej,następnie strategia "Fix" podczas gdy strategia "Ignore" jest silnie zdominowana przez pozostałe. Szczegółowe wyniki analizy oraz ich interpretację znajdziesz w raporcie `raport.pdf`.
+Analiza wzrostu kosztów decyzji "Check" pozwoliła określić maksymalne koszty, przy których strategia "Check" pozostaje optymalna. Maksymalny koszt to 1,70 - po przekroczeniu którego opłacalne staje się przyjęcie strategii "Fix".
+
+Strategia "Ignore" stałaby się optymalna, gdyby kara za powiązanie dużych błędów w kodzie z firmą wynosiła mniej niż 17 (obecny koszt - 30).  
+
+Redukcja kary za powiązanie niewielkich błędów w kodzie z firmą sprawiłaby, że strategia "Check" stałaby się jeszce bardziej atrakcyjna w porównaniu do innych strategii.
+
+
+
 
 
 ## Autor
@@ -29,7 +42,16 @@ Projekt został stworzony przez Cezarego Panasa.
 
 ### Dodatkowe Informacje
 
-Pełny opis problemu oraz metodologia analizy znajdują się w raporcie `raport.pdf`.
+Plik `graph.py` obejmuje: 
+- utworzenie grafu, 
+- funkcję kalkulującą prawodpodobienstwa wystąpienia konkretnych stanów świata po wybraniu odpowiedniej strategii oraz odpowiadające im skumulowane koszty,
+- funkcję dokonującą symulacji w oparciu zakłócenia paremtrów (prawdopodobieństw zdarzeń p,q i r 0 w oparciu o cenzurowane rozkłady normalne,
+- funkcję rysującą wykresy
+
+`sensitivity_analisis.py`
+- 
+
+
 
 Szczegółowe fragmenty analizy w kodzie można znaleźć w następujących miejscach:
 - Funkcja obliczająca potencjalne stany świata (prawdopodobieństwo że skończymy w konkretnym węźle końcowym po wybraniu konkretnej strategii oraz koszty które poniesie firma) znajduje się w pliku `graph.py` w linijkach [60-83]([https://github.com/czareek/Decision-Tree/edit/main/README.md](https://github.com/czareek/Decision-Tree/blob/main/graph.py)).
