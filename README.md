@@ -14,20 +14,62 @@ Kod został napisany w języku Python i wykorzystuje biblioteki takie jak Networ
 ## Wyniki 
 
 
-Rekomendacja: Strategia "Check" jest optymalna, uwzględniając koszty, ryzyko i stabilność wyników. Strategia "fix" ma niższe odchylenie standardowe kosztów, ale "Check" nadal przewyższa ją pod względem opłacalności. Strategia "ignore" jest silnie zdominowana przez dwie pozostałe strategie. Analiza wrażliwości, obejmująca zwiększenie odchylenia standardowego prawdopodobieństwa oraz wzrost kosztów decyzji "Check", dostarcza cennych informacji dla procesu decyzyjnego. Na podstawie uzyskanych wyników  rekomendowana  strategia to  "Check".
+![image](https://github.com/czareek/Decision-Tree/assets/148364757/d4294a96-c16b-434a-b906-a4bf7e3e566a)
+
+>Podsumowanie : 
+
+>Ignore Strategy: Mean = 9.69, Standard Deviation = 1.27, Number of wins: 0
+
+>Check Strategy:  Mean = 6.26, Standard Deviation = 0.73, Number of wins: 443
+
+>Fix Strategy:    Mean = 7.00,  Standard Deviation = 0.26, Number of wins: 57
+
+>[!NOTE]
+>"Number of wins" odnosi się do liczby realizacji symulacjii w których dana strategia osiągnęła najniższą wartość oczekiwaną kosztów
+
+![image](https://github.com/czareek/Decision-Tree/assets/148364757/105cc09f-5627-4894-b9a2-2399e0bf6577)
+
+Rekomendacja: Strategia "Check" jest optymalna, uwzględniając koszty, ryzyko i stabilność wyników. Strategia "fix" ma niższe odchylenie standardowe kosztów, ale "Check" nadal przewyższa ją pod względem opłacalności. Strategia "ignore" jest silnie zdominowana przez dwie pozostałe strategie. Na podstawie uzyskanych wyników  rekomendowana  strategia to  "Check".
+
+
 
 ## Analiza Wrażliwości
 
 Analiza wrażliwości, obejmująca zwiększenie odchylenia standardowego prawdopodobieństwa oraz wzrost kosztów decyzji "Check", dostarcza cennych informacji dla procesu decyzyjnego.
 Projekt analizuje wpływ zmiany wysokości kary, kosztów przeprowadzenia badania na opłacalność poszczególnych strategii:
 
-W wyniku zwiększenienia odchylenia standardowego prawdopodobieństwa "p" strategia "Check" nadal jest najbardziej opłacalna, chociaż jej przewaga zmniejszyła się. Strategia "Ignore" zyskała na konkurencyjności.
+### Zwiększenie niepewności wydarzenia "p" (zmiana odchylenia standardowego z 0,05 na 0,20 ) 
 
-Analiza wzrostu kosztów decyzji "Check" pozwoliła określić maksymalne koszty, przy których strategia "Check" pozostaje optymalna. Maksymalny koszt to 1,70 - po przekroczeniu którego opłacalne staje się przyjęcie strategii "Fix".
+![image](https://github.com/czareek/Decision-Tree/assets/148364757/31d8e450-bb61-48c4-8301-da14391b0478)
 
-Strategia "Ignore" stałaby się optymalna, gdyby kara za powiązanie dużych błędów w kodzie z firmą wynosiła mniej niż 17 (obecny koszt - 30).  
+![image](https://github.com/czareek/Decision-Tree/assets/148364757/0bf370d2-4998-4317-9b0f-772eed61d9c0)
 
-Redukcja kary za powiązanie niewielkich błędów w kodzie z firmą sprawiłaby, że strategia "Check" stałaby się jeszce bardziej atrakcyjna w porównaniu do innych strategii.
+ W wyniku zwiększenienia odchylenia standardowego prawdopodobieństwa "p" strategia "Check" nadal jest najbardziej opłacalna, chociaż jej przewaga zmniejszyła się. Strategia "Ignore" zyskała na konkurencyjności.
+
+---
+
+### Wpływ początkowego kosztu przeprowadzenia badania na wybór strategii
+
+
+![image](https://github.com/czareek/Decision-Tree/assets/148364757/06e6a854-c37c-4cd5-8402-73acb8eb0e87)
+
+ Analiza wzrostu kosztów początkowych decyzji "Check" pozwoliła określić maksymalne koszty, przy których strategia "Check" pozostaje optymalna. Maksymalny koszt to 1,70 - po przekroczeniu którego opłacalne staje się przyjęcie strategii "Fix". 
+
+---
+
+### Zmniejszenie kary za powiązanie dużych błędów w kodzie z firmą
+
+![image](https://github.com/czareek/Decision-Tree/assets/148364757/99322c00-2cab-4917-99b1-578c91fcc69b)
+
+ Strategia "Ignore" stałaby się optymalna, gdyby kara za powiązanie dużych błędów w kodzie z firmą wynosiła mniej niż 17 (obecny koszt - 30).  
+
+---
+
+### Zmniejszenie kary za powiązanie niewielkich błędów w kodzie z firmą
+
+![image](https://github.com/czareek/Decision-Tree/assets/148364757/e14ffb25-1b26-4af5-ad6c-0ecda0b46cf6)
+
+ Redukcja kary za powiązanie niewielkich błędów w kodzie z firmą sprawiłaby, że strategia "Check" stałaby się jeszce bardziej atrakcyjna w porównaniu do innych strategii.
 
 
 
@@ -48,10 +90,10 @@ Projekt został stworzony przez Cezarego Panasa.
 - funkcję rysującą wykresy
 
 `simulation.py`
-- wykorzustuje funkcję "run_simulation_analisis" z pliku `graph.py` która przyjmuje jako argumenty opisane w treści zadania parametry oraz generuje histogramy wraz z oszacowaniami jądrowymi gęstości dla każdej strategii, a także dystrybuanty rozkładu prawdopodobieństwa każdej ze strategii na jednym wykresie.  
+- wykorzystuje funkcję "run_simulation_analysis" z pliku `graph.py` która jako argumenty przyjmuje opisane w treści zadania parametry oraz generuje histogramy wraz z oszacowaniami jądrowymi gęstości, a także dystrybuanty rozkładu prawdopodobieństwa każdej ze strategii.  
 
 `sensitivity_analisis.py`
-- Przeprowadza analizę wrażlwości kopiując orginalny graf i zmieniając wartośc konkretnego partametru w pętli 
+-  analiza wrażlwości wraz z wizualiacją 
   
 
 
