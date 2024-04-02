@@ -1,5 +1,4 @@
-# Projekt Analizy Decyzyjnej w Kontekście Zarządzania Ryzykiem Oprogramowania
-
+# Wspomaganie decyzji w warunkach niepewności przy wykorzystaniu drzewa decyzyjnego
 ## Wprowadzenie
 
 Projekt stanowi kompleksową analizę dotyczącą wyboru optymalnego rozwiązania w  warunkach niepewności. Model w oparciu o ocenę ekspercką oraz symulacje numeryczne, pozwala zwizualizować potencjalne konsekwencje poszczególnych strategii.
