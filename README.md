@@ -41,22 +41,20 @@ Projekt został stworzony przez Cezarego Panasa.
 
 ### Dodatkowe Informacje
 
-Plik `graph.py` obejmuje: 
+`graph.py` obejmuje: 
 - utworzenie grafu, 
 - funkcję kalkulującą prawodpodobienstwa wystąpienia konkretnych stanów świata po wybraniu odpowiedniej strategii oraz odpowiadające im skumulowane koszty,
 - funkcję dokonującą symulacji w oparciu zakłócenia paremtrów (prawdopodobieństw zdarzeń p,q i r 0 w oparciu o cenzurowane rozkłady normalne,
 - funkcję rysującą wykresy
 
+`simulation.py`
+- wykorzustuje funkcję "run_simulation_analisis" z pliku `graph.py` która przyjmuje jako argumenty opisane w treści zadania parametry oraz generuje histogramy wraz z oszacowaniami jądrowymi gęstości dla każdej strategii, a także dystrybuanty rozkładu prawdopodobieństwa każdej ze strategii na jednym wykresie.  
+
 `sensitivity_analisis.py`
-- 
+- Przeprowadza analizę wrażlwości kopiując orginalny graf i zmieniając wartośc konkretnego partametru w pętli 
+  
 
 
 
-Szczegółowe fragmenty analizy w kodzie można znaleźć w następujących miejscach:
-- Funkcja obliczająca potencjalne stany świata (prawdopodobieństwo że skończymy w konkretnym węźle końcowym po wybraniu konkretnej strategii oraz koszty które poniesie firma) znajduje się w pliku `graph.py` w linijkach [60-83]([https://github.com/czareek/Decision-Tree/edit/main/README.md](https://github.com/czareek/Decision-Tree/blob/main/graph.py)).
-- Funkcja symulująca analizę znajduje się w pliku `graph.py` w linijkach [86-144](https://github.com/czareek/Decision-Tree/blob/main/graph.py).
-- Analiza wrażliwości na zmianę odchylenia standardowego znajduje się w pliku `sensitivity_analisis.py` w linijkach [146-180](https://github.com/czareek/Decision-Tree/blob/main/sensitivity_analisis.py).
-- Analiza kosztów przy wzroście kosztu decyzji "Check" znajduje się w pliku `sensitivity_analisis.py` w linijkach [182-222](https://github.com/czareek/Decision-Tree/blob/main/sensitivity_analisis.py).
-- Analiza wpływu zmiany kary za błędy na opłacalność strategii znajduje się w pliku `sensitivity_analisis.py` w linijkach [224-269](https://github.com/czareek/Decision-Tree/blob/main/sensitivity_analisis.py).
-- Analiza wszystkich prawdopodobieństw znajduje się w pliku `main.py` w linijkach [271-315](https://github.com/czareek/Decision-Tree/blob/main/sensitivity_analisis.py).
+
 
